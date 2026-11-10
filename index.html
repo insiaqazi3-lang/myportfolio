@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insia Fatima Noor Qazi | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pink: #ed75a6;
+    --purple: #a58bd5;
+    --dark: #493849;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff8fc;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 8%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 3px 15px #ed75a622;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #c94e86;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    color: #c94e86;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    padding: 130px 9% 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(130deg,#fff0f6,#f5eaff,#fff8fc);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hello {
+    display: inline-block;
+    background: white;
+    color: #c94e86;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(35px,5vw,58px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #df6b9f;
+}
+
+.hero h3 {
+    color: #9973bd;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    line-height: 1.8;
+    color: #816d7d;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: linear-gradient(120deg,#e96fa3,#b28bda);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* PROFILE IMAGE */
+.hero-image {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 7px solid white;
+    box-shadow: 0 15px 40px #d78bb655;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* SECTIONS */
+section:not(.hero) {
+    padding: 90px 9%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    color: #c94e86;
+    margin-bottom: 40px;
+}
+
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+    color: #816d7d;
+}
+
+/* SKILLS */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #ed75a622;
+    transition: .3s;
+}
+
+.skill:hover {
+    transform: translateY(-7px);
+    background: #fff0f6;
+}
+
+.skill h3 {
+    color: #c94e86;
+}
+
+/* PROJECTS */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 25px;
+}
+
+.project {
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #ed75a622;
+    text-align: center;
+}
+
+.project h3 {
+    color: #c94e86;
+    margin-bottom: 12px;
+}
+
+.project p {
+    color: #816d7d;
+    line-height: 1.7;
+}
+
+/* CONTACT */
+.contact-box {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #ed75a622;
+}
+
+.contact-box p {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #fff0f6;
+    color: #c94e86;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px #ed75a622;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">Insia <span>Portfolio</span></div>
+
+    <button class="menu-btn" id="menuBtn"
+    aria-label="Toggle navigation"
+    aria-expanded="false">☰</button>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <span class="hello">Welcome to My Portfolio ✨</span>
+
+        <h1>Hi, I'm <span>Insia Fatima</span></h1>
+
+        <h3>Creative Web Developer</h3>
+
+        <p>
+            I am passionate about web development,
+            creative designing and learning new technologies.
+            Welcome to my personal portfolio website!
+        </p>
+
+        <a href="#about" class="btn">Explore More</a>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+
+    <!-- YOUR PROFILE PHOTO -->
+    <div class="hero-image">
+        <img src="profile.jpg.jpeg" alt="Insia Fatima Profile">
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-box">
+        <p>
+            Hello! My name is Insia Fatima Noor Qazi.
+            I love creativity, technology and designing
+            beautiful websites. My goal is to become a
+            successful web developer and create amazing
+            digital experiences.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">
+            <h3>🌐 HTML</h3>
+            <p>Web Structure</p>
+        </div>
+
+        <div class="skill">
+            <h3>🎨 CSS</h3>
+            <p>Web Designing</p>
+        </div>
+
+        <div class="skill">
+            <h3>⚡ JavaScript</h3>
+            <p>Web Interactions</p>
+        </div>
+
+        <div class="skill">
+            <h3>💻 Creativity</h3>
+            <p>Creative Ideas</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="project">
+            <h3>🌸 Portfolio Website</h3>
+            <p>My personal responsive portfolio website.</p>
+        </div>
+
+        <div class="project">
+            <h3>💗 Landing Page</h3>
+            <p>A beautiful landing page with modern design.</p>
+        </div>
+
+        <div class="project">
+            <h3>✨ Calculator</h3>
+            <p>A simple calculator project using JavaScript.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+        <p>Thank you for visiting my portfolio!</p>
+        <p>Let's connect and create something amazing.</p>
+
+        <a class="btn"
+        href="mailto:your-email@example.com">
+            Send Me an Email
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Insia Fatima Noor Qazi | Made with 💗</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.addEventListener("click", function() {
+
+    navbar.classList.toggle("active");
+
+    const isOpen = navbar.classList.contains("active");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll("#navbar a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navbar.classList.remove("active");
+
+        menuBtn.textContent = "☰";
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+</script>
+
+</body>
+</html>
